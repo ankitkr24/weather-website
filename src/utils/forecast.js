@@ -8,7 +8,8 @@ const forecast=(lat,lon,callback)=>{
         }else if(body.error){
             callback('unable to connect to location services',undefined)
         }else{
-            callback(undefined,body.current.weather_descriptions[0] +'. Current temp is '+body.current.temperature+' but it feels like '+body.current.feelslike)
+            console.log(body.current)
+            callback(undefined,body.current.weather_descriptions[0] +'. Current temp is '+body.current.temperature+' but it feels like '+body.current.feelslike+'. Humidity is '+ body.current.humidity+'% .')
         }
     })
 }
